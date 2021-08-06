@@ -10,14 +10,14 @@ def check_root_full():
     return check_disk_full()
 
 def main():
-    if check_reboot():
-        print("Pending Reboot.")
-        sys.exit(1)
-    if check_root_full():
-        print("check if root space is available")    
-    print("Another statement says everything here is OK.")
+    checks = [(check_reboot(), 'pending reboot'),
+              (check_root_full(), 'root partition full']
+    for check, msg in checks:
+        if check():
+            print(msg)
+            sys.exit(1)
+
     print("Everything ok.")
-    print("Yes - everything is ok.")
     sys.exit(0)
 
 main()
