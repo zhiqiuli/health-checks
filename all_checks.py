@@ -9,6 +9,9 @@ def check_root_full():
     ''' Return True'''
     return check_disk_full()
 
+def check_if_everything_true():
+    return True
+
 def main():
     checks = [(check_reboot(), 'pending reboot'),
               (check_root_full(), 'root partition full']
