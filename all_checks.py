@@ -14,7 +14,7 @@ def check_if_everything_true():
 
 def main():
     checks = [(check_reboot(), 'pending reboot'),
-              (check_root_full(), 'root partition full']
+              (check_if_everything_true(), 'nothing is wrong')]
     everything_ok = True
     for check, msg in checks:
         if check():
